@@ -1,0 +1,7 @@
+gem "sinatra"
+gem "haml"
+gem "json"
+gem "fastercsv"
+gem "mysql"
+gem "activerecord"
+gem "ken"

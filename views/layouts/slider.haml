@@ -1,0 +1,26 @@
+%h3
+  Automaton Explorer
+  .controls{:style => "width: 800px"}
+    rule: 
+    %span#slider
+    %span#rule 30
+    %span{:style => "float:right;"}
+      start: 
+      %input{:type => "radio", :checked => 'checked', :id => "point", :name => "start", :value => "point"}
+      %label{:for => "point"} point
+      %input{:type => "radio", :id => "random", :name => "start", :value => "random"}
+      %label{:for => "random"} random
+    
+  %p#graph
+    From 
+    %a{:href => "http://mathworld.wolfram.com/CellularAutomaton.html"} MathWorld:
+    "A cellular automaton is a collection of 'colored' cells on a grid of
+    specified shape that evolves through a number of discrete time steps
+    according to a set of rules based on the states of neighboring cells." This
+    example explores binary, nearest-neighbor, one-dimensional automata, of
+    which there are 256 (2
+    %sup 8
+    ) possible rules. The eight possible
+    outcomes for the current rule are shown across the top; click to toggle the
+    selected bit.
+

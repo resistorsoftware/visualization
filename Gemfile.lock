@@ -1,0 +1,30 @@
+GEM
+  specs:
+    activerecord (2.3.8)
+      activesupport (= 2.3.8)
+    activesupport (2.3.8)
+    addressable (2.2.1)
+    extlib (0.9.15)
+    fastercsv (1.5.3)
+    haml (3.0.13)
+    json (1.4.3)
+    ken (0.2.0)
+      addressable
+      extlib
+      json
+    mysql (2.8.1)
+    rack (1.1.0)
+    sinatra (1.0)
+      rack (>= 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activerecord
+  fastercsv
+  haml
+  json
+  ken
+  mysql
+  sinatra

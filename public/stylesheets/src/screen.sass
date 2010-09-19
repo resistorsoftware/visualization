@@ -1,0 +1,67 @@
+@import compass/reset
+@import compass/utilities/general/clearfix
+@import compass/utilities/lists
+@import compass/utilities/links
+@import compass/utilities/text
+@import compass/layout/sticky-footer
+@import partials/jquery_ui
+@import partials/base
+@import partials/fancy-buttons
+@import partials/nexalogy
+@import blueprint/liquid
+@import partials/gritter
+
+
++global-reset
++blueprint-liquid-grid
+
+$footer_height: 20px
+
+body
+  margin: 5px
+  background-color: #fff
+  font-family: "Inconsolata" serif
+  font-size: 0.9em
+
+.two-col
+  +container
+  width: 100%
+  #header
+    +column($blueprint_grid_columns)
+    position: relative
+    h1
+      margin-top: 10px
+      margin-bottom: 20px
+      height: 130px
+      +replace-text('nexalogy.png')
+  #sidebar
+    $sidebar_columns: floor($blueprint_grid_columns / 8)
+    +column(4)
+  #content
+    $content_columns: ceil(2 * $blueprint_grid_columns / 6)
+    +column(20, true)
+    margin-top: 10px
+    h2
+      font-size: 1.5em
+      font-weight: bold
+    p
+      font-size: 0.9em 
+      margin: 5px
+      line-height: 1.3em      
+      strong
+        font-weight: bold
+        color: #ffc
+        margin: 10px
+    ul
+      margin-top: 20px
+      li
+        padding-top: 5px
+        padding-bottom: 5px
+        font-size: 0.9em
+        color: #ededed
+        margin-left: 20px
+
++sticky_footer($footer_height)
+
+#footer
+  text-align: center

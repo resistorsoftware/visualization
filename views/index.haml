@@ -1,0 +1,38 @@
+#sidebar
+  #controls
+    %p Iteration limits
+    #iterations_slider
+    %input#iterations_value{:type => "text", :size => 4, :value => 1000}
+    %p Spring Length
+    #spring_length_slider
+    %input#spring_length_value{:type => "text", :size => 3, :min => 1, :max => 100, :value => 20}    
+    %p Spring Damping
+    #spring_damping_slider
+    %input#spring_damping_value{:type => "text", :size => 3, :min => 0, :max => 1, :value => 0.3}    
+    %p Spring Constant
+    #spring_constant_slider
+    %input#spring_constant_value{:type => "text", :size => 3, :min => 0, :max => 1, :value => 0.1}
+      
+#content
+  
+  #protovis
+    .titlebar
+    #protovis_graph
+
+  #infovis
+    .titlebar
+    #log
+    #infovis_graph
+     
+#dialog-modal
+  .dialog-content
+  %script{:type => "text/html", :id => "freebaseTemplate"}
+    %div.freebase
+      .name Name: <%=name%>
+      .thumbnail <%=thumbnail%>
+      .description Description: <%=description%>
+      .webpages Webpages: <%=webpages%>
+      .url Url: <%=url%>
+      .aliases Aliases: <%=aliases%>
+      
+    

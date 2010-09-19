@@ -1,0 +1,26 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    %title Protovis Example
+    %meta{'http-equiv' => 'Content-Type', 'content' => "text/html;charset=UTF-8"}
+    %script{:src => "/javascripts/jquery-1.4.2.min.js", :type => "text/javascript"}
+    %script{:src => "/javascripts/protovis/protovis-r3.3.js", :type => "text/javascript"}
+    %script{:src => "/javascripts/protovis/examples/slider/jquery-ui-1.8rc3.custom.min.js", :type => "text/javascript"}
+    %script{:src => "/javascripts/protovis/slider_protovis.js", :type => "text/javascript"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/screen.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/buttons.css", :media => "screen, projection"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "http://fonts.googleapis.com/css?family=Inconsolata"}
+    
+  %body
+    #root
+      .two-col
+        #loading
+          %img{:src => "/images/ajax-loader.gif"}
+        =yield
+      #root_footer
+    #footer &copy; 2010 Nexalogy
+    
+    
+    
+    
+    

@@ -1,0 +1,5 @@
+%h1
+  Current Nodes in Database
+  %ul
+  - @nodes.each do |node|
+    %li #{node.id} :: #{node.label}
