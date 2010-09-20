@@ -529,12 +529,14 @@ $(function () {
   
   $("#tone-analysis").click(function () {
      $("#controls").hide();
+     $("#protovis").show();
      $.ajax({
        type: 'get',
        dataType: 'json',
        url: '/tone',
        success: function(result) {
          console.log('Success: ', result);
+         $.nexalogy_Treemap(result.data.tone_analysis);
        }
      })
   });

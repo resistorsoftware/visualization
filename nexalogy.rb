@@ -41,6 +41,8 @@ set :run, false
 
 SENTIMENTS = "#{File.dirname(__FILE__)}/config/sentiments.csv"
 SENTIMENT_DEFINITIONS = "#{File.dirname(__FILE__)}/config/sentiments.yml"
+TONE_DATA = "#{File.dirname(__FILE__)}/config/tone_analysis.yaml" 
+@@tone_data = nil
 
 get '/' do
   haml :index
@@ -178,7 +180,14 @@ end
 
 get '/tone' do
   content_type :json
-  {:data => {:tone_analysis => "all good"}}.to_json
+  init
+  result = {}
+  result.default = 0
+  @@tone_data.each do |tone|
+    result[tone['intense_sentence_dominant_category']] +=1
+  end
+  
+  {:data => {:tone_analysis => result}}.to_json
 end
 
 get '/graph' do
@@ -242,3 +251,13 @@ def haml_special(template, layout, options={})
   haml template, options.merge(:layout => layout)
 end
 
+# load in the tone_analysis YAML
+def init
+  return if @@tone_data != nil
+  if (!FileTest.exist?(TONE_DATA))
+    raise StandardError.new("Configuration file '#{TONE_DATA}' was not found!\n")
+  end
+  
+  # since this is a YAML file, we can append new keys to it.
+  @@tone_data = YAML.load(File.read(TONE_DATA))
+end

@@ -10,6 +10,11 @@ namespace :nexalogy do
   end
 end
 
+# simple alias so nexalogy becomes nex
+namespace :nex do
+  desc "Use Lymbix ToneAPI to get the tone of the descriptions from the sentiments CSV file found in the config"
+  task :csv2tone => "nexalogy:tone_analysis"
+
 module Nexalogy
   module Base
     
