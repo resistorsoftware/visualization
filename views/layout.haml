@@ -13,7 +13,6 @@
     %script{:src => "/javascripts/200_node.js", :type => "text/javascript"}
     
     %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/screen.css"}
-    %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/buttons.css", :media => "screen, projection"}
     %link{:rel => "stylesheet", :type => "text/css", :href => "http://fonts.googleapis.com/css?family=Inconsolata"}
   %body
     #root
@@ -22,6 +21,7 @@
           %button.light{:id => "show-protovis50"} 50 Node
           %button.light{:id => "show-protovis200"} 200 Node
           %button.light{:id => "show-sentiments"} Sentiments
+          %button.light{:id => "tone-analysis"} Tone Analysis
           %button.light{:id => "json2MySQL"} JSON 2 MySQL
           #loading
             %img{:src => "/images/ajax-loader.gif"}

@@ -176,6 +176,11 @@ get '/sentiments' do
   {:data => {:sentiments => cleaned}}.to_json
 end
 
+get '/tone' do
+  content_type :json
+  {:data => {:tone_analysis => "all good"}}.to_json
+end
+
 get '/graph' do
   # setup the method to return the right data
   size = params[:size].to_i ||= nil

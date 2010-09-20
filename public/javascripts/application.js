@@ -523,7 +523,20 @@ $(function () {
   
   $("#show-sentiments").click(function () {
     $("#protovis").show();
+    $("#controls").hide();
     $.nexalogy_setupTreemap();
+  });
+  
+  $("#tone-analysis").click(function () {
+     $("#controls").hide();
+     $.ajax({
+       type: 'get',
+       dataType: 'json',
+       url: '/tone',
+       success: function(result) {
+         console.log('Success: ', result);
+       }
+     })
   });
   
   $("#json2MySQL").click(function () {

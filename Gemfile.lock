@@ -12,8 +12,12 @@ GEM
       addressable
       extlib
       json
+    lymbix (0.3.6)
+    mime-types (1.16)
     mysql (2.8.1)
     rack (1.1.0)
+    rest-client (1.6.1)
+      mime-types (>= 1.16)
     sinatra (1.0)
       rack (>= 1.0)
 
@@ -26,5 +30,7 @@ DEPENDENCIES
   haml
   json
   ken
+  lymbix
   mysql
+  rest-client
   sinatra
